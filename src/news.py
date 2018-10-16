@@ -63,22 +63,11 @@ def get_days_with_more_than_error_rate(num):
     '''
 
     query = '''
-            CREATE VIEW request AS
-                SELECT
-                TO_CHAR(time::DATE,'Mon dd, yyyy') AS day,
-                status,
-                CAST(COUNT(*) AS FLOAT)
-                FROM log GROUP BY day, status;
-
-            SELECT request.day,
-            ROUND(100.0 * (error_request.count/request.count)::NUMERIC, 1)
+            SELECT TO_CHAR(request.day::DATE,'Mon dd, yyyy'),
+            ROUND(100.0 * (error_request.count/request.count)::NUMERIC, 2)
             || %s
-            FROM request JOIN
-                (
-                  SELECT day, status, count FROM request
-                  WHERE status != '200 OK'
-                 ) AS error_request ON request.day = error_request.day
-                 AND request.status != error_request.status
+            FROM request LEFT JOIN error_request
+            ON request.day = error_request.day
             WHERE error_request.count / request.count > %s
             '''
     result = fetchall(query, "%", num)

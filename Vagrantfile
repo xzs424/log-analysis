@@ -31,6 +31,7 @@ Vagrant.configure("2") do |config|
     su vagrant -c 'createdb'
     su vagrant -c 'createdb news'
     su vagrant -c 'psql news -f /vagrant/schema/newsdata.sql'
+    su vagrant -c 'psql news -f /vagrant/schema/create_views.sql'
 
     vagrantTip="[35m[1mThe shared directory is located at /vagrant\\nTo access your shared files: cd /vagrant[m"
     echo -e $vagrantTip > /etc/motd

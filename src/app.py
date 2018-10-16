@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 from news import get_most_popular_authors
 from news import get_most_popular_articles
