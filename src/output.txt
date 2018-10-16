@@ -2,12 +2,16 @@
 "Candidate is jerk, alleges rival" - 338647 views
 "Bears love berries, alleges bear" - 253801 views
 "Bad things gone, say good people" - 170098 views
+The query takes 2.4142348766326904 seconds
 
-2. Who are the most popular article authors of all time??
-Ursula La Multa - 507594 views
-Rudolf von Treppenwitz - 423457 views
-Anonymous Contributor - 170098 views
-Markoff Chaney - 84557 views
+2. Who are the most popular article authors of all time?
+"Markoff Chaney" - 84557 views
+"Ursula La Multa" - 507594 views
+"Rudolf von Treppenwitz" - 423457 views
+"Anonymous Contributor" - 170098 views
+The query takes 3.0465099811553955 seconds
 
 3. On which days did more than 1% of requests lead to errors?
-Jul 17, 2016 - 2.26% errors
+"Jul 17, 2016" - 2.26% errors
+The query takes 3.5748701095581055 seconds
+
